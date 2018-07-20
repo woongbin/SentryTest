@@ -26,7 +26,7 @@ class Plugin extends AbstractPlugin
             $sentryConfig = [];
         } else {
             $sentryConfig['dsn'] = $config->get('dsn');
-            $sentryConfig['breadcrumbs.sql_bindings'] = $config->get('breadcrumbs.sql_bindings');
+            $sentryConfig['breadcrumbs.sql_bindings'] = $config->get('sql_bindings');
             $sentryConfig['user_context'] = $config->get('user_context');
         }
 
@@ -63,7 +63,7 @@ class Plugin extends AbstractPlugin
      */
     public function activate($installedVersion = null)
     {
-        $config = XeConfig::set(static::CONFIG_NAME, []);
+        XeConfig::set(static::CONFIG_NAME, []);
     }
 
     /**

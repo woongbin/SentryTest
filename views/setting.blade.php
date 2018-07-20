@@ -21,14 +21,16 @@
                                 <div class="clearfix">
                                     <label>breadcrumbs.sql_bindings</label>
                                 </div>
-                                <input type="text" name="breadcrumbs.sql_bindings" class="xe-form-control" value="{{ $config->get('breadcrumbs.sql_bindings') }}">
+                                <input type="radio" name="sql_bindings" value=true @if ($config->get('sql_bindings') === true) checked="checked" @endif> True
+                                <input type="radio" name="sql_bindings" value=false @if ($config->get('sql_bindings') === false) checked="checked" @endif> False
                             </div>
 
                             <div class="form-group">
                                 <div class="clearfix">
                                     <label>user_context</label>
                                 </div>
-                                <input type="text" name="user_context" class="xe-form-control" value="{{ $config->get('user_context') }}">
+                                <input type="radio" name="user_context" value=true @if ($config->get('user_context') === true) checked="checked" @endif> True
+                                <input type="radio" name="user_context" value=false @if ($config->get('user_context') === false) checked="checked" @endif> False
                             </div>
                         </div>
 
